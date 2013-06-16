@@ -1,4 +1,4 @@
-# Api::Problem
+# Api Problem for Rails
 [![CodeClimate](https://codeclimate.com/github/guillec/http_problem.png)](https://codeclimate.com/github/guillec/api_problem)
 [![Build Status](https://travis-ci.org/guillec/api-problem.png)](https://travis-ci.org/guillec/api-problem)
 [![Coverage
