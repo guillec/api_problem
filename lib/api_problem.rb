@@ -1,4 +1,5 @@
 require "api_problem/version"
+require "api_problem/railtie" if defined? Rails
 
 module ApiProblem
   MissingTitle       = Class.new(StandardError)
