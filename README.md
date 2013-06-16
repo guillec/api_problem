@@ -1,8 +1,8 @@
 # Api Problem for Rails
 [![CodeClimate](https://codeclimate.com/github/guillec/http_problem.png)](https://codeclimate.com/github/guillec/api_problem)
-[![Build Status](https://travis-ci.org/guillec/api-problem.png)](https://travis-ci.org/guillec/api-problem)
+[![Build Status](https://travis-ci.org/guillec/api-problem.png)](https://travis-ci.org/guillec/api_problem)
 [![Coverage
-Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api-problem)
+Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
 With this gem you can return api errors that follow the api-problem draft specs 
 - http://tools.ietf.org/html/draft-nottingham-http-problem-04
