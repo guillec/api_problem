@@ -1,11 +1,11 @@
 require "test_helper.rb"
-require "api/problem"
+require "api_problem"
 
-describe "Api::Problem module" do
+describe "ApiProblem module" do
   it "should return a hash" do
 
     fake_class = class Class
-      include Api::Problem
+      include ApiProblem
     end
 
     http_problem = { problemType: "http://example.com", title: "This is a test" }

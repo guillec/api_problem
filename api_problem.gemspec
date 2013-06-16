@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'api/problem/version'
+require 'api_problem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "api_problem"
-  spec.version       = Api::Problem::VERSION
+  spec.version       = ApiProblem::VERSION
   spec.authors       = ["Guille Carlos"]
   spec.email         = ["guille@bitpop.in"]
   spec.description   = %q{An implementation of draft-nottingham-http-problem.}
