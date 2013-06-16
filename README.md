@@ -4,7 +4,7 @@
 [![Coverage
 Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
-With this gem you can return api errors that follow the api-problem draft specs 
+With this gem you can return api errors that follow the http api problem draft 
 - http://tools.ietf.org/html/draft-nottingham-http-problem-04
 
 Here is a explanation behind the draft:
@@ -49,9 +49,10 @@ To use create your api problems controller:
 The urls to these views is what you will pass to the api_problem method as the problem_type.
 
 Here is an example of how to return a api_error:    
+    respond_to :html, :api_problem_json
 
     format.api_problem_json do 
-      render json: api_problem first_errors_name_url, "You are out of credits",  { } 
+      render json: api_problem first_errors_name_url, "You are out of credits" 
     end
 
 This will respond to the client with something like:
