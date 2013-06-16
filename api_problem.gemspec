@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["guille@bitpop.in"]
   spec.description   = %q{An implementation of draft-nottingham-http-problem.}
   spec.summary       = %q{An implementation of draft-nottingham-http-problem.}
-  spec.homepage      = "https://github.com/guillec/api-problem"
+  spec.homepage      = "https://github.com/guillec/api_problem"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
