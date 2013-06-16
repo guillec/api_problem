@@ -1,4 +1,4 @@
-# Api Problem for Rails
+# ApiProblem for Rails
 [![CodeClimate](https://codeclimate.com/github/guillec/http_problem.png)](https://codeclimate.com/github/guillec/api_problem)
 [![Build Status](https://travis-ci.org/guillec/api-problem.png)](https://travis-ci.org/guillec/api_problem)
 [![Coverage
@@ -7,14 +7,14 @@ Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://cover
 With this gem you can return api errors that follow the api-problem draft specs 
 - http://tools.ietf.org/html/draft-nottingham-http-problem-04
 
-Here is @mnot explanation behind the draft:
+Here is a explanation behind the draft:
 - http://www.mnot.net/blog/2013/05/15/http_problem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'api-problem'
+    gem 'api_problem'
 
 And then execute:
 
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install api-problem
+    $ gem install api_problem
 
 ## Basics on Gem
 
@@ -37,7 +37,7 @@ The method params:
     args = optional values
 
 ## Usage in Rails
-Api::Problem provides a Railtie that registers the proper MIME types with Rails:
+ApiProblem provides a Railtie that registers the proper MIME types with Rails:
 - application/api-problem+json
 - application/api-problem+xml
 
@@ -61,6 +61,10 @@ This will respond to the client with something like:
       "title": "You are out of credits",
       ...
     }
+
+Sample curl call
+
+    curl -i "http://localhost:3000/emails" -H 'ACCEPT: application/api-problem+json'
 
 ## Contributing
 
