@@ -5,7 +5,7 @@
 Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
 With this gem you can return api errors that follow the api-problem draft specs 
-- http://tools.ietf.org/html/draft-nottingham-http-problem-04
+- http://tools.ietf.org/html/draft-nottingham-http-problem-06
 
 Here is a explanation behind the draft:
 - http://www.mnot.net/blog/2013/05/15/http_problem
