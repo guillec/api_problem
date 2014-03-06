@@ -2,14 +2,18 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
   argument :one, :type => :hash, :required => false, :default => {}
 
-  def building
-    p type
-    p title
-    p status
-    p detail
-    p instance
-    p ns
-    template "api_problem_layout.jbuilder.erb", "app/views#{ns_path}api_problem/#{name}.jbuilder"
+  def build_http_error
+    template "api_problem_layout.jbuilder.erb", "app/views#{ns_path}api_problems/#{name}.jbuilder"
+  end
+
+  def build_error_html
+    template "errors_view.html.erb", "app/views#{ns_path}errors/#{name}.html.erb"
+    template "errors_controller.erb", "app/controllers#{ns_path}errors_controller.rb"
+  end
+
+  def build_route
+    route "match '#{ns_path}#{name}' => '#{ns_class_name}errors##{name}', :via => :get, :as => :#{problem}"
+    inject_into_class "app/controllers/#{ns_path}errors_controller.rb", "#{ns_class_name}ErrorsController".classify, "def #{name}\nend\n"
   end
 
   private
@@ -48,9 +52,17 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
     def ns_path
       ns ? "/#{ns}/" : "/"
     end
+
+    def ns_class_name
+      ns ? "#{ns.classify}::" : ""
+    end
+
+    def problem
+      ns ? "#{ns}_#{name}" : "#{name}"
+    end
     
     def problem_url
-      "#{name}_url"
+      "#{problem}_url"
     end
 
 end
