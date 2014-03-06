@@ -1,6 +1,5 @@
 require 'test_helper'
 require 'api_problem'
-require '../rails'
 
 class CellGeneratorTest < Rails::Generators::TestCase
   p "asflkasflksadjflaksdjfl;k"
