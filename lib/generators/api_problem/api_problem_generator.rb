@@ -8,11 +8,19 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
     p status
     p detail
     p instance
+    template "api_problem_layout.jbuilder.erb", "app/views/api_problem/#{name}.jbuilder"
   end
 
   private
+    # User must specify that they don't a type by setting type:false
     def type
-      one["type"]
+      if one["type"].nil?
+        problem_url
+      elsif one["type"] && one["type"] != "false"
+        "'#{one["type"]}'"
+      elsif one["type"] && one["type"] == "false"
+        nil
+      end
     end
 
     def title
@@ -30,5 +38,8 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
     def instance
       one["instance"]
     end
-
+    
+    def problem_url
+      "#{name}_url"
+    end
 end

@@ -1,8 +1,4 @@
-<% if options.type == "true" %>
-json.set! :type, <%= error_url %>
-<% elsif options.type != "false" %>
-json.set! :type, <%= options.type %>"
-<% end %>
+<% if type %>json.set! :type, <%= type %><% end %>
 <% if options.title %>json.set! :title, "<%= options.title %>"<% end %>
 <% if options.status %>json.set! :status, <%= options.status %><% end %>
 <% if options.detail %>json.set! :detail, "<%= options.detail %>"<% end %>
