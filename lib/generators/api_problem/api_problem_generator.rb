@@ -1,14 +1,13 @@
 class ApiProblemGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
-  argument :one,   :type => :hash, :required => false
+  argument :one,   :type => :hash, :required => false, :default => {}
 
-  def build_values 
-  end
-
-  def create_api_problem_resource
+  def building
     p type
     p title
     p status
+    p detail
+    p instance
   end
 
   private
@@ -21,7 +20,7 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
     end
 
     def status
-      Integer(one["status"])
+      one["status"] ? Integer(one["status"]) : nil
     end
 
     def detail
