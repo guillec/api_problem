@@ -39,6 +39,10 @@ You can specify the problem detail object members
 
     rail g api_problem bad_token_error type:"http://example.com/probs/out-of-credit" status:403 title:"You do not have enough credit." detail:"Your current balance is 30, but that costs 50."
     
+You can also namespace it with the ns key
+
+    rail g api_problem bad_token_error ns:api
+    
 About the type, if you DON'T want a type you need to specify with false
 
     rail g api_problem bad_token_error type:false
