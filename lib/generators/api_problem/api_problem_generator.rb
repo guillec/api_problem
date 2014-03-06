@@ -1,6 +1,6 @@
 class ApiProblemGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
-  argument :one,   :type => :hash, :required => false, :default => {}
+  argument :one, :type => :hash, :required => false, :default => {}
 
   def building
     p type
@@ -8,7 +8,8 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
     p status
     p detail
     p instance
-    template "api_problem_layout.jbuilder.erb", "app/views/api_problem/#{name}.jbuilder"
+    p ns
+    template "api_problem_layout.jbuilder.erb", "app/views#{ns_path}api_problem/#{name}.jbuilder"
   end
 
   private
@@ -39,7 +40,17 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
       one["instance"]
     end
     
+    # Namespace
+    def ns
+      one["ns"]
+    end
+
+    def ns_path
+      ns ? "/#{ns}/" : "/"
+    end
+    
     def problem_url
       "#{name}_url"
     end
+
 end
