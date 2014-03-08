@@ -5,10 +5,14 @@
 Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
 With this gem you can return api errors that follow the api-problem draft specs 
+=======
+With this gem you can return api errors that follow the http api problem draft 
 - http://tools.ietf.org/html/draft-nottingham-http-problem-06
 
 Here is a explanation behind the draft:
 - http://www.mnot.net/blog/2013/05/15/http_problem
+
+## VERSION 0.0.2 almost ready this is what you will be able to do....
 
 ## Installation
 
@@ -24,47 +28,42 @@ Or install it yourself as:
 
     $ gem install api_problem
 
-## Basics on Gem
-
-This gem installs the following method: 
-
-    api_problem( problem_type, title, { optional stuff } )
-
-The method params:
-
-    problem_type = required
-    title = required
-    args = optional values
-
 ## Usage in Rails
 ApiProblem provides a Railtie that registers the proper MIME types with Rails:
 - application/api-problem+json
 - application/api-problem+xml
 
+This gem installs a generator for your project
+    
+    rail g api_problem bad_token_error
+    
+You can specify the problem detail object members
 
-To use create your api problems controller:
+    rail g api_problem bad_token_error type:"http://example.com/probs/out-of-credit" status:403 title:"You do not have enough credit." detail:"Your current balance is 30, but that costs 50."
+    
+You can also namespace it with the ns key
 
-    rails g controller api_problems first_error_name second_error_name
+    rail g api_problem bad_token_error ns:api
+    
+About the type, if you DON'T want a type you need to specify with false
 
-The urls to these views is what you will pass to the api_problem method as the problem_type.
+    rail g api_problem bad_token_error type:false
 
-Here is an example of how to return a api_error:    
+About the type, if you dont set a type, it will default to the error name
+    
+    # This will create a bad_token_error type for you.
+    rail g api_problem bad_token_error
+    
+Files that get created for you
 
-    format.api_problem_json do 
-      render json: api_problem first_errors_name_url, "You are out of credits",  { } 
-    end
-
-This will respond to the client with something like:
-
-    {
-      "problemType": "http://example.com/problem_details/first_error_name",
-      "title": "You are out of credits",
-      ...
-    }
-
-Sample curl call
-
-    curl -i "http://localhost:3000/emails" -H 'ACCEPT: application/api-problem+json'
+    create app/views/api_problems/bad_token_error.jbuilder
+    create app/views/errors/bad_token_error.html.erb
+    create app/controllers/errors_controller.rb
+    route  match '/bad_token_error' => 'errors#bad_token_error', :via => :get, :as => :bad_token_error
+    
+## TODO
+- The XML views
+- Tests for the genrator
 
 ## Contributing
 
