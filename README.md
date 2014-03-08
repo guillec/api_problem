@@ -1,8 +1,7 @@
 # ApiProblem for Rails
-[![CodeClimate](https://codeclimate.com/github/guillec/http_problem.png)](https://codeclimate.com/github/guillec/api_problem)
+[![Code Climate](https://codeclimate.com/github/guillec/http_problem.png)](https://codeclimate.com/github/guillec/api_problem)
 [![Build Status](https://travis-ci.org/guillec/api-problem.png)](https://travis-ci.org/guillec/api_problem)
-[![Coverage
-Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
+[![Coverage Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
 Builds a structure for your Rails application to handle application/api-problem+json and application/api-problem+xml.
 (http://tools.ietf.org/html/draft-nottingham-http-problem-06). To read more about the media type (http://www.mnot.net/blog/2013/05/15/http_problem)
