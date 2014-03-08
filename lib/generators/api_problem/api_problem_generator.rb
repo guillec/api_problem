@@ -4,6 +4,7 @@ class ApiProblemGenerator < Rails::Generators::NamedBase
 
   def build_http_error
     template "api_problem_layout.jbuilder.erb", "app/views#{ns_path}api_problems/#{name}.jbuilder"
+    template "api_problem_layout.xml.erb", "app/views#{ns_path}api_problems/#{name}.xml.erb"
   end
 
   def build_error_html
