@@ -4,15 +4,8 @@
 [![Coverage
 Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
-With this gem you can return api errors that follow the api-problem draft specs 
-=======
-With this gem you can return api errors that follow the http api problem draft 
-- http://tools.ietf.org/html/draft-nottingham-http-problem-06
-
-Here is a explanation behind the draft:
-- http://www.mnot.net/blog/2013/05/15/http_problem
-
-## VERSION 0.0.2 almost ready this is what you will be able to do....
+Installs a Rails generator to handle your http problems (http://tools.ietf.org/html/draft-nottingham-http-problem-06).
+To read more about the media type (http://www.mnot.net/blog/2013/05/15/http_problem)
 
 ## Installation
 
@@ -33,7 +26,7 @@ ApiProblem provides a Railtie that registers the proper MIME types with Rails:
 - application/api-problem+json
 - application/api-problem+xml
 
-This gem installs a generator for your project
+This gem also installs a generator for your project
     
     rail g api_problem bad_token_error
     
@@ -57,13 +50,13 @@ About the type, if you dont set a type, it will default to the error name
 Files that get created for you
 
     create app/views/api_problems/bad_token_error.jbuilder
+    create app/views/api_problems/bad_token_error.xml.erb
     create app/views/errors/bad_token_error.html.erb
     create app/controllers/errors_controller.rb
     route  match '/bad_token_error' => 'errors#bad_token_error', :via => :get, :as => :bad_token_error
     
 ## TODO
-- The XML views
-- Tests for the genrator
+- Tests for the genrator :) 
 
 ## Contributing
 
