@@ -4,8 +4,8 @@
 [![Coverage
 Status](https://coveralls.io/repos/guillec/api-problem/badge.png)](https://coveralls.io/r/guillec/api_problem)
 
-Installs a Rails generator to handle your http problems (http://tools.ietf.org/html/draft-nottingham-http-problem-06).
-To read more about the media type (http://www.mnot.net/blog/2013/05/15/http_problem)
+Builds a structure for your Rails application to handle application/api-problem+json and application/api-problem+xml.
+(http://tools.ietf.org/html/draft-nottingham-http-problem-06). To read more about the media type (http://www.mnot.net/blog/2013/05/15/http_problem)
 
 ## Installation
 
