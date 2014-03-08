@@ -55,7 +55,7 @@ Files that get created for you
     route  match '/bad_token_error' => 'errors#bad_token_error', :via => :get, :as => :bad_token_error
     
 ## TODO
-- Tests for the genrator :) 
+- Tests for the generator :)
 
 ## Contributing
 
